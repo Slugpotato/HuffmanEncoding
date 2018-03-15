@@ -9,7 +9,6 @@ def main(argv=None):
     if argv is None:
         argv = sys.argv
 
-
     compress("./data.txt")
     decompress("./compressedData.acmp")
 
