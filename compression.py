@@ -82,7 +82,7 @@ def compress(fileToCompress):
 
     # Given huffman tree, create a huffman cipher
     root = pq.get()
-    printTree(root, '')
+    generateCipher(root, '')
 
     # Write out to compressed file
     cipheredList = []
@@ -128,7 +128,7 @@ def leafNodes(sortedKeys, byteDict):
     return tempNodes
 
 # Iterates through tree and creates a huffman cipher based on the node depth
-def printTree(nd, turns):
+def generateCipher(nd, turns):
 
     # print("nd[0].value is ", nd[0].value)
     # print("nd[0].label is ", nd[0].label)
@@ -141,10 +141,10 @@ def printTree(nd, turns):
         return
 
     if child1 != None:
-        printTree(child1, turns + '0')
+        generateCipher(child1, turns + '0')
 
     if child2 != None:
-        printTree(child2, turns + '1')
+        generateCipher(child2, turns + '1')
 
 # Creates a huffman tree based on the frequencies of the characters
 def createTree(pq):
